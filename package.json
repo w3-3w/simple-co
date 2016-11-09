@@ -1,6 +1,6 @@
 {
   "name": "simple-co",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "simple generator async control flow goodness",
   "main": "index.js",
   "scripts": {
@@ -20,5 +20,7 @@
   "bugs": {
     "url": "https://github.com/w3-3w/simple-co/issues"
   },
-  "homepage": "https://github.com/w3-3w/simple-co#readme"
+  "engines": {
+    "node": ">= 4.3.2"
+  }
 }

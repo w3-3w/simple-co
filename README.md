@@ -37,3 +37,7 @@ co(function*(){
   console.error(err);
 });
 ```
+
+## Todo
+
+* add tests
