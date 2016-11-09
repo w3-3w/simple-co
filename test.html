@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>promiseTest</title>
+</head>
+<body>
+<p>Open your developer tools and watch the console.</p>
+<script src="./index.js"></script>
+<!-- Uncaught ReferenceError: module is not defined will be throwed if run in browsers -->
+<script>
+co(function*(){
+	try {
+		const x = yield new Promise(function(resolve, reject){
+			window.setTimeout(function(){
+				console.log("resolved x: 2000");
+				resolve(2000);
+			}, 2000);
+		});
+		console.log(x);
+		
+		const y = yield Promise.all([
+			new Promise(function(resolve, reject){
+				window.setTimeout(function(){
+					console.log("resolved y1: 2000");
+					resolve(2000);
+				}, 2000);
+			}),
+			new Promise(function(resolve, reject){
+				window.setTimeout(function(){
+					console.log("resolved y2: 2500");
+					resolve(2500);
+				}, 2500);
+			})
+		]);
+		console.log(y);
+		
+		const z = yield Promise.race([
+			new Promise(function(resolve, reject){
+				window.setTimeout(function(){
+					console.log("resolved z1: 2500");
+					resolve(2500);
+				}, 2500);
+			}),
+			new Promise(function(resolve, reject){
+				window.setTimeout(function(){
+					console.log("resolved z2: 2000");
+					resolve(2000);
+				}, 2000);
+			})
+		]);
+		console.log(z);
+		
+		const c = yield {obj: 'itself'};
+		console.log(c);
+		
+		const e = yield new Promise(function(resolve, reject){
+			window.setTimeout(function(){
+				console.error("rejected e");
+				reject(new Error('e rejected'));
+			}, 1000);
+		});
+		console.log(e);
+	} catch(err) {
+		console.error(err);
+	}
+});
+</script>
+</body>
+</html>

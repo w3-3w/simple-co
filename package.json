@@ -1,0 +1,24 @@
+{
+  "name": "simple-co",
+  "version": "0.0.1",
+  "description": "simple generator async control flow goodness",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/w3-3w/simple-co.git"
+  },
+  "keywords": [
+    "async",
+    "generator",
+    "flow"
+  ],
+  "author": "wzj3335",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/w3-3w/simple-co/issues"
+  },
+  "homepage": "https://github.com/w3-3w/simple-co#readme"
+}
