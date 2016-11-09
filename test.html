@@ -52,16 +52,26 @@ co(function*(){
 		const c = yield {obj: 'itself'};
 		console.log(c);
 		
-		const e = yield new Promise(function(resolve, reject){
+		const e1 = yield new Promise(function(resolve, reject){
 			window.setTimeout(function(){
-				console.error("rejected e");
-				reject(new Error('e rejected'));
+				console.error("rejected e1");
+				reject(new Error('e1 rejected'));
 			}, 1000);
 		});
-		console.log(e);
+		console.log(e1);
 	} catch(err) {
 		console.error(err);
 	}
+	
+	const e2 = yield new Promise(function(resolve, reject){
+		window.setTimeout(function(){
+			console.error("rejected e2");
+			reject(new Error('e2 rejected'));
+		}, 1000);
+	});
+	console.log(e2);
+}).catch(function(err){
+	console.error(err);
 });
 </script>
 </body>

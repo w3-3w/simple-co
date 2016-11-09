@@ -16,9 +16,10 @@ Completely the same as co!
 
 ```javascript
 co(function*(){
+  // errors can be try/catched
   try {
     const asyncResult = yield new Promise((resolve, reject) => {
-      // do something
+      // do something ...
       const success = true;
       if (success) {
         resolve('Your Result');
@@ -26,9 +27,13 @@ co(function*(){
         reject(new Error('Your Error'));
       }
     });
-    // ...
+    // do something ...
   } catch(err) {
     console.error(err);
   }
+  // do something ...
+}).catch(function(err){
+  // handle uncaught error
+  console.error(err);
 });
 ```
