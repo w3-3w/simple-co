@@ -16,7 +16,7 @@ Once a Promise is rejected, the corresponding error will be thrown. If it is not
 ## Restrictions
 
 * Node.js >= 4.3.2
-* Yields other than `Promise`s　or array of `Promise`s will be passed as it is
+* Yields other than `Promise`s or array of `Promise`s will be passed as it is
 * Elements which are not `Promise`s in array will be ignored
 
 ## Example

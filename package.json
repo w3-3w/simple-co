@@ -1,6 +1,6 @@
 {
   "name": "simple-co",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "simple generator async control flow goodness",
   "main": "index.js",
   "scripts": {
